@@ -8,7 +8,8 @@ const searchReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_VIDEOS:
       // TODO
-      break;
+      return { ...state, videos: action.videos };
+    // break;
     default:
       return state;
   }

@@ -1,22 +1,26 @@
 import axios from "axios";
-import { YOUTUBE_API_KEY } from "../../config/youtube";
+// import { YOUTUBE_API_KEY } from "../../config/youtube";
 
 export const SET_USERNAME = "SET_USERNAME";
 export const SET_DARK_MODE = "SET_DARK_MODE";
 export const SET_CURRENT_VIDEO = "SET_CURRENT_VIDEO";
 export const SET_VIDEOS = "SET_VIDEOS";
 
-export const setUsername = name => ({
+export const setUsername = (name) => ({
   type: SET_USERNAME,
-  name
+  name,
 });
 
-export const setDarkMode = value => ({
+export const setDarkMode = (value) => ({
   // TODO
+  type: "SET_DARK_MODE",
+  value,
 });
 
-export const setCurrentVideo = video => ({
+export const setCurrentVideo = (video) => ({
   // TODO
+  type: "SET_CURRENT_VIDEO",
+  video,
 });
 
 export const setSearchVideos = (videos) => ({
@@ -32,4 +36,5 @@ export const thunkedSearch = ({ query, max = 5 }) => (dispatch) =>
     .then((resp) => resp.data)
     .then(({ items }) => {
       // TODO
+      dispatch(items);
     });
