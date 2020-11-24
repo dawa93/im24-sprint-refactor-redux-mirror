@@ -36,5 +36,6 @@ export const thunkedSearch = ({ query, max = 5 }) => (dispatch) =>
     .then((resp) => resp.data)
     .then(({ items }) => {
       // TODO
-      dispatch(items);
+      dispatch(setSearchVideos(items));
+      dispatch(setCurrentVideo(items[0]));
     });

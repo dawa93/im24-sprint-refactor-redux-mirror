@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isSettingOpen: false
+      isSettingOpen: false,
     };
   }
 
@@ -20,8 +20,8 @@ class App extends React.Component {
   }
 
   handleSettingButtonClick() {
-    this.setState(prevState => ({
-      isSettingOpen: !prevState.isSettingOpen
+    this.setState((prevState) => ({
+      isSettingOpen: !prevState.isSettingOpen,
     }));
   }
 
@@ -49,12 +49,12 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isLoading: state.searchReducer.isLoading,
     videos: state.searchReducer.videos,
     currentVideo: state.videoReducer.currentVideo,
-    darkMode: state.settingReducer.darkMode
+    darkMode: state.settingReducer.darkMode,
   };
 };
 
