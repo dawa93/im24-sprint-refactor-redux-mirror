@@ -14,5 +14,5 @@ const searchReducer = (state = initialState, action) => {
       return state;
   }
 };
-
+// for PR
 export default searchReducer;
